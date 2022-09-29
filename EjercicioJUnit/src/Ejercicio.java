@@ -44,28 +44,34 @@ public class Ejercicio
     {
         boolean primo = true;
 
-        switch (numero)
+
+        if(numero <= 1)
         {
-            case 2:
-            case 3:
-            case 5:
-            case 7:
+           primo = false;
+        }
 
-                break;
+        else
+        {
+            switch (numero) {
+                case 2:
+                case 3:
+                case 5:
+                case 7:
 
-            default:
-                int[] primosPrincipales = {2,3,5,7};
+                    break;
 
-                for(byte i = 0; i < 4; i++)
-                {
-                    if(numero % primosPrincipales[i] == 0)
-                    {
-                        primo = false;
-                        break;
+                default:
+                    int[] primosPrincipales = {2, 3, 5, 7};
+
+                    for (byte i = 0; i < 4; i++) {
+                        if (numero % primosPrincipales[i] == 0) {
+                            primo = false;
+                            break;
+                        }
                     }
-                }
 
-                break;
+                    break;
+            }
         }
 
         return primo;
